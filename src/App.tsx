@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './App.css' // o './App.css' según cómo lo hayas llamado
+import { useEffect, useState } from 'react';
+import './App.css' 
 import type { Task } from './types/Task';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
@@ -8,6 +8,20 @@ function App() {
 
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  // Cargar tareas desde localStorage al iniciar la aplicación
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+  
+  // Guardar tareas en localStorage cada vez que cambian 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
 
   const handleAddTask = (task: Task) => {
     setTasks(prevTasks => [...prevTasks, task]);
@@ -36,6 +50,8 @@ return (
       <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
         Lista de Tareas
       </h1>
+
+
 
       <TaskForm
         newTaskTitle={newTaskTitle}
