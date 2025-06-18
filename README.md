@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# ✅ Lista de Tareas con React + TypeScript + Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de lista de tareas desarrollada con React y TypeScript, utilizando Tailwind CSS para los estilos. El objetivo de este proyecto es practicar los fundamentos de React, componentes, manejo de estado, props, persistencia en `localStorage`, y estructuración profesional de proyectos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Funcionalidades
 
-## Expanding the ESLint configuration
+- Crear tareas
+- Marcar tareas como completadas
+- Eliminar tareas
+- Persistencia de datos usando `localStorage`
+- Estilos modernos con Tailwind CSS
+- Arquitectura modular y limpia
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tecnologías utilizadas
+
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## 📂 Estructura del proyecto
+
+```bash
+todo-pro/
+├── src/
+│   ├── components/       # Componentes reutilizables (TaskForm, TaskList, TaskItem)
+│   ├── types/            # Tipado de datos (ej: Task.ts)
+│   ├── App.tsx           # Componente principal
+│   ├── main.tsx          # Entrada principal de React
+│   └── App.css           # Estilos de Tailwind
+├── public/
+├── package.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ▶️ Cómo ejecutar el proyecto
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Clona el repositorio
+
+```bash
+git clone https://github.com/JhayCodee/SimpletasksApp.git
+cd SimpletasksApp
 ```
+
+2. Instala las dependencias
+
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo
+
+```bash
+npm run dev
+```
+
+---
+
+## 🤝 Autor
+
+Desarrollado por **Jhayco** como parte de su ruta profesional hacia el dominio de tecnologías frontend modernas.
